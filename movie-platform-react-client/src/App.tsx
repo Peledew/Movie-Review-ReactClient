@@ -1,11 +1,23 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
+import Options from './components/Options/Options';
 
 const App: React.FC = () => {
   return (
-    <div className="container">
-      <h1 className="center-align">Hello, Materialize!</h1>
-      <p className="flow-text">This is a simple React app using Vite, TypeScript, and MaterializeCSS.</p>
-      <button className="btn waves-effect waves-light">Click Me</button>
+    <div>
+      <div className="row">
+        <div className="col s12 m4 l2 hide-on-small-only no-padding">
+          <Options />
+        </div>
+
+        <div className="col s12 m8 l10 no-padding">
+          <div className="container">
+            <main>
+              <Outlet />
+            </main>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
