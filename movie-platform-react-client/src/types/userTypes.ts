@@ -6,7 +6,7 @@ export interface UserRegisterData {
   password: string;
 }
 
-export interface UserLoginData{
+export interface UserLoginData {
   username: string;
   password: string;
 }

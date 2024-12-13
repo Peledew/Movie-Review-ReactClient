@@ -14,13 +14,17 @@ const AppRouter: React.FC = () => {
       <Route path="/" element={<App />}>
         {/* This is the parent route */}
         {/* Protected Routes */}
-        <Route index element={<ProtectedRoute><Home /></ProtectedRoute>}/>
+        <Route
+          index
+          element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          }
+        />
         <Route path="about" element={<About />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<LogIn />} />
-
-        
-
       </Route>
 
       <Route path="/home" element={<Navigate to="/" />} />

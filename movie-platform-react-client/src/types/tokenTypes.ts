@@ -1,4 +1,4 @@
-export interface TokenData{
-    accessToken: string;
-    refreshToken: string;
+export interface TokenData {
+  accessToken: string;
+  refreshToken: string;
 }

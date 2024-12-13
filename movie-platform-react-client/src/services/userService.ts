@@ -52,9 +52,8 @@ export const loginUser = async (loginData: UserLoginData) => {
 
 export const refreshAccessToken = async () => {
   try {
-    const accessToken = localStorage.getItem('accessToken') || '';  // Default to empty string
-    const refreshToken = localStorage.getItem('refreshToken') || '';  // Default to empty string
-
+    const accessToken = localStorage.getItem('accessToken') || ''; // Default to empty string
+    const refreshToken = localStorage.getItem('refreshToken') || ''; // Default to empty string
 
     if (!refreshToken) {
       throw new Error('No refresh token available');
@@ -88,23 +87,19 @@ export const refreshAccessToken = async () => {
   }
 };
 
-
-
 export const getAll = async () => {
-  try{
+  try {
     const response = await customFetch(`${baseUrl}`, {
       method: 'GET',
-      headers:{
+      headers: {
         'Content-Type': 'application/json',
-      }
+      },
     });
 
     if (!response.ok) {
       throw new Error('Failed to refresh token');
     }
-
-  }
-  catch(error){
+  } catch (error) {
     console.error('Error during fetching all users: ', error);
     throw error;
   }
