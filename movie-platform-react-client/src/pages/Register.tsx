@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { registerUser } from '../services/userService';
 
 const Register: React.FC = () => {
-  const [userName, setUserName] = useState('');
+  const [username, setUsername] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -14,8 +14,8 @@ const Register: React.FC = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     switch (name) {
-      case 'userName':
-        setUserName(value);
+      case 'username':
+        setUsername(value);
         break;
       case 'firstName':
         setFirstName(value);
@@ -40,7 +40,7 @@ const Register: React.FC = () => {
 
     // Send registration request to backend
     const registrationData = {
-      userName,
+      username,
       firstName,
       lastName,
       email,
@@ -66,7 +66,7 @@ const Register: React.FC = () => {
       <form onSubmit={handleSubmit}>
         <div>
           <label>User Name</label>
-          <input type="text" name="userName" value={userName} onChange={handleInputChange} required />
+          <input type="text" name="userName" value={username} onChange={handleInputChange} required />
         </div>
         <div>
           <label>First Name</label>

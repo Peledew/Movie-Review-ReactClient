@@ -6,16 +6,21 @@ import About from './pages/About';
 import NotFound from './pages/NotFound';
 import Register from './pages/Register';
 import LogIn from './pages/LogIn';
+import ProtectedRoute from './components/ProtectedRoute';
 
 const AppRouter: React.FC = () => {
   return (
     <Routes>
       <Route path="/" element={<App />}>
         {/* This is the parent route */}
-        <Route index element={<Home />} />
+        {/* Protected Routes */}
+        <Route index element={<ProtectedRoute><Home /></ProtectedRoute>}/>
         <Route path="about" element={<About />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<LogIn />} />
+
+        
+
       </Route>
 
       <Route path="/home" element={<Navigate to="/" />} />
