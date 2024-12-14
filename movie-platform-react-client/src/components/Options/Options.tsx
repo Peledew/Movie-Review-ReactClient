@@ -9,26 +9,24 @@ const Options: React.FC = () => {
   const userRole = loggedUser?.role;
 
   const menuOptions = [
-    { path: "/", label: "Home", roles: ["Admin", "User"] },
-    { path: "/about", label: "About", roles: ["Admin", "User"] },
-    { path: "/register", label: "Register", roles: ["Admin", "User"] },
-    { path: "/login", label: "Login", roles: ["Admin", "User"] },
+    { path: '/', label: 'Home', roles: ['Admin', 'User'] },
+    { path: '/about', label: 'About', roles: ['Admin', 'User'] },
+    { path: '/register', label: 'Register', roles: ['Admin', 'User'] },
+    { path: '/allMovies', label: 'Movies list', roles: ['Admin', 'User'] },
   ];
 
   // Filter options based on the role
-  const filteredOptions = menuOptions.filter((option) =>
-    option.roles.includes(userRole || "")
-  );
+  const filteredOptions = menuOptions.filter((option) => option.roles.includes(userRole || ''));
 
   return (
     <div className={styles['vertical-navbar']}>
       <ul>
-      {filteredOptions.map((option) => (
-        <li key={option.path} onClick={() => navigate(option.path)}>
-          <a>{option.label}</a>
-        </li>
-      ))}
-    </ul>
+        {filteredOptions.map((option) => (
+          <li key={option.path} onClick={() => navigate(option.path)}>
+            <a>{option.label}</a>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

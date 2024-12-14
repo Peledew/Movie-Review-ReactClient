@@ -7,6 +7,7 @@ import NotFound from './pages/NotFound';
 import Register from './pages/Register';
 import LogIn from './pages/LogIn';
 import ProtectedRoute from './components/ProtectedRoute';
+import AllMovies from './pages/AllMovies';
 
 const AppRouter: React.FC = () => {
   return (
@@ -25,6 +26,7 @@ const AppRouter: React.FC = () => {
         <Route path="about" element={<About />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<LogIn />} />
+        <Route path="allMovies" element={<AllMovies />} />
       </Route>
 
       <Route path="/home" element={<Navigate to="/" />} />
