@@ -21,11 +21,11 @@ const Home: React.FC = () => {
       <div>
         <h1>Home page</h1>
         {loggedUser ? <h2>Hello, {loggedUser.unique_name}!</h2> : <h2>Welcome, Guest!</h2>}
-        <button onClick={() => getAll()}>Klikni me</button>
+        <button className='btn' onClick={() => getAll()}>Klikni me</button>
       </div>
 
       <div>
-        <button onClick={() => handleLogout()}>Logout</button>
+        <button className='btn' onClick={() => handleLogout()}>Logout</button>
       </div>
     </div>
   );

@@ -1,26 +1,34 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Options.module.css';
+import { decodeToken } from '../../services/authService';
 
 const Options: React.FC = () => {
   const navigate = useNavigate();
+  const loggedUser = decodeToken();
+  const userRole = loggedUser?.role;
+
+  const menuOptions = [
+    { path: "/", label: "Home", roles: ["Admin", "User"] },
+    { path: "/about", label: "About", roles: ["Admin", "User"] },
+    { path: "/register", label: "Register", roles: ["Admin", "User"] },
+    { path: "/login", label: "Login", roles: ["Admin", "User"] },
+  ];
+
+  // Filter options based on the role
+  const filteredOptions = menuOptions.filter((option) =>
+    option.roles.includes(userRole || "")
+  );
 
   return (
     <div className={styles['vertical-navbar']}>
       <ul>
-        <li onClick={() => navigate('/')}>
-          <a>Home</a>
+      {filteredOptions.map((option) => (
+        <li key={option.path} onClick={() => navigate(option.path)}>
+          <a>{option.label}</a>
         </li>
-        <li onClick={() => navigate('/about')}>
-          <a>About</a>
-        </li>
-        <li onClick={() => navigate('/register')}>
-          <a>Register</a>
-        </li>
-        <li onClick={() => navigate('/login')}>
-          <a>Log in</a>
-        </li>
-      </ul>
+      ))}
+    </ul>
     </div>
   );
 };

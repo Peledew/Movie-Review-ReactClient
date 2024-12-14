@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom'; // Import BrowserRou
 import './index.css';
 import 'materialize-css/dist/css/materialize.min.css';
 import AppRouter from './router.tsx';
+import './styles/global.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

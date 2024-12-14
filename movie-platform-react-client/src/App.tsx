@@ -4,7 +4,7 @@ import Options from './components/Options/Options';
 
 const App: React.FC = () => {
   return (
-    <div>
+    <>
       <div className="row">
         <div className="col s12 m4 l2 hide-on-small-only no-padding">
           <Options />
@@ -18,7 +18,7 @@ const App: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
