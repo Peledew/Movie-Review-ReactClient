@@ -1,4 +1,4 @@
-import { refreshAccessToken } from './userService';
+import { refreshAccessToken } from './authService';
 
 export const customFetch = async (url: string, options: RequestInit = {}) => {
   let accessToken = localStorage.getItem('accessToken');

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { registerUser } from '../services/userService';
+import { registerUser } from '../services/authService';
 
 const Register: React.FC = () => {
   const [username, setUsername] = useState('');
