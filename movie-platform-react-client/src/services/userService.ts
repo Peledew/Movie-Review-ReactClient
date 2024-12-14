@@ -77,9 +77,9 @@ export const refreshAccessToken = async () => {
       throw new Error('Failed to refresh token');
     }
 
-    const { accessToken: newAccessToken } = await response.json();
-    localStorage.setItem('accessToken', newAccessToken); // Save new access token
-
+    const { accessToken: newAccessToken, refreshToken: newRefreshToken } = await response.json();
+    localStorage.setItem('accessToken', newAccessToken); 
+    localStorage.setItem('refreshToken', newRefreshToken);
     return newAccessToken;
   } catch (error) {
     console.error('Refresh token error:', error);
@@ -102,5 +102,16 @@ export const getAll = async () => {
   } catch (error) {
     console.error('Error during fetching all users: ', error);
     throw error;
+  }
+};
+
+export const logOut = async() => {
+  try{
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
+    console.log('User logged out successfully');
+  }
+  catch(error){
+    console.error('Error during loging out: ', error);
   }
 };
