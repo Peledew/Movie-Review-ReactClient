@@ -13,6 +13,7 @@ const Options: React.FC = () => {
     { path: '/about', label: 'About', roles: ['Admin', 'User'] },
     { path: '/register', label: 'Register', roles: ['Admin', 'User'] },
     { path: '/allMovies', label: 'Movies list', roles: ['Admin', 'User'] },
+    { path: '/sassPractice', label: 'Sass practice', roles: ['Admin', 'User'] },
   ];
 
   // Filter options based on the role
